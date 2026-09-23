@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MB Street Food Corner | Eat &bull; Chill &bull; Repeat</title>
+<meta name="description" content="MB Street Food Corner - Cebu street food, silog meals and milk tea. Order online for pickup or delivery." />
+
+<!-- ============================================================
+     GOOGLE FONTS
+     Baloo 2  -> friendly rounded font used for headings/logo type
+     Inter    -> clean font used for body text
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SKIP LINK (accessibility)
+     ============================================================ -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION BAR
+     ============================================================ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+
+    <a href="#home" class="navbar__brand" aria-label="MB Street Food Corner - Home">
+      <!-- LOGO IMAGE: replace images/logo.png with your real logo -->
+      <img src="images/gwapo.jpg" alt="MB Street Food Corner logo" class="navbar__logo">
+      <span class="navbar__brand-text">
+        <strong>MB</strong> Street Food Corner
+      </span>
+    </a>
+
+    <nav class="navbar__nav" id="navMenu" aria-label="Main navigation">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#how-to-order" class="nav-link">How to Order</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <!-- CART BUTTON: opens the cart drawer -->
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart" aria-haspopup="dialog">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+        <span>Cart</span>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+
+      <!-- HAMBURGER MENU (mobile only) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Floating sticky cart button for mobile scroll convenience -->
+<button class="floating-cart" id="floatingCartBtn" aria-label="Open cart">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+  <span class="floating-cart__count" id="floatingCartCount">0</span>
+</button>
+
+<main id="main-content">
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero__bg" aria-hidden="true">
+      <span class="hero__blob hero__blob--1"></span>
+      <span class="hero__blob hero__blob--2"></span>
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__content">
+        <!-- LOGO IMAGE (hero): replace images/logo.png with your real logo -->
+        <img src="images/gwapo.jpg" alt="MB Street Food Corner logo" class="hero__logo">
+
+        <p class="hero__eyebrow">Est. 2024 &middot; Purok Sunflower, Consolacion, Cebu</p>
+        <h1 class="hero__title">MB Street Food Corner</h1>
+        <p class="hero__tagline">EAT &bull; CHILL &bull; REPEAT</p>
+        <p class="hero__desc">
+          Cebu-style street food, hearty silog meals and milk tea made the way we'd
+          serve it to our own family &mdash; affordable, filling, and always fresh off the grill.
+        </p>
+
+        <div class="hero__actions">
+          <button class="btn btn--primary" id="orderNowBtn">Order Now</button>
+          <button class="btn btn--outline" id="viewMenuBtn">View Menu</button>
+        </div>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero__foodcard hero__foodcard--1">
+          <img src="images/milktea.jpg" alt="">
+        </div>
+        <div class="hero__foodcard hero__foodcard--2">
+          <img src="images/streetfood.jpg" alt="">
+        </div>
+        <div class="hero__foodcard hero__foodcard--3">
+          <img src="images/silog.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       ============================================================ -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about__grid">
+        <div class="about__image">
+          <img src="images/gwapo.jpg" alt="MB Street Food Corner">
+        </div>
+        <div class="about__text">
+          <p class="eyebrow">About Us</p>
+          <h2>Good food, no fuss, no fancy prices.</h2>
+          <!-- EDIT THIS TEXT: change the about-us copy here -->
+          <p>
+            MB Street Food Corner started in 2024 as a small corner stall with one simple goal:
+            serve the street food and milk tea we grew up loving, made fresh every day and priced
+            so everyone can grab a bite without thinking twice.
+          </p>
+          <p>
+            From sizzling silog meals in the morning to skewers, fries and milk tea any time of day,
+            every item on our menu is cooked to order. Eat in at our corner, take it to go, or have it
+            delivered &mdash; either way, we want it to feel like your regular chill-out spot.
+          </p>
+          <ul class="about__points">
+            <li><strong>Affordable</strong> &mdash; street food and drinks priced for everyday cravings</li>
+            <li><strong>Fresh</strong> &mdash; cooked and prepared per order, not sitting under a heat lamp</li>
+            <li><strong>Friendly</strong> &mdash; a casual corner to eat, chill, and come back to</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW TO ORDER SECTION
+       ============================================================ -->
+  <section class="how-to-order" id="how-to-order">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--center">How to Order</p>
+      <h2 class="section-title section-title--center">Four steps to your next meal</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 6l2 12h12l2-12M9 10v5M15 10v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>1. Choose your favorites</h3>
+          <p>Browse milk tea, silog meals, street food and more in our menu.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+          </div>
+          <h3>2. Add to cart</h3>
+          <p>Pick your quantity and add-ons, then add each item to your cart.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>3. Enter your details</h3>
+          <p>Tell us your name, number, and whether it's pickup or delivery.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 10h16M6 6h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>4. Pay &amp; confirm</h3>
+          <p>Choose GCash, Maya or cash, then confirm to get your order number.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MENU SECTION
+       ============================================================ -->
+  <section class="menu" id="menu">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--center">Our Menu</p>
+      <h2 class="section-title section-title--center">Everything is made to order</h2>
+
+      <div class="menu__controls">
+        <div class="menu__search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="search" id="menuSearch" placeholder="Search for milk tea, fries, silog..." aria-label="Search menu">
+        </div>
+
+        <!-- CATEGORY FILTER BUTTONS (auto-generated in script.js too, but kept here for initial render) -->
+        <div class="menu__categories" id="menuCategories" role="tablist" aria-label="Menu categories">
+          <button class="cat-btn is-active" data-category="all">All</button>
+          <button class="cat-btn" data-category="milktea">Milk Tea</button>
+          <button class="cat-btn" data-category="silog">Silog / Meals</button>
+          <button class="cat-btn" data-category="streetfood">Street Food</button>
+          <button class="cat-btn" data-category="drinks">Drinks</button>
+        </div>
+      </div>
+
+      <p class="menu__empty" id="menuEmpty" hidden>No products found. Try a different search or category.</p>
+
+      <div class="menu__grid" id="menuGrid">
+        <!-- Product cards are generated automatically by script.js from the PRODUCTS array -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY SECTION
+       ============================================================ -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--center">Gallery</p>
+      <h2 class="section-title section-title--center">A taste of the corner</h2>
+
+      <div class="gallery__grid">
+        <!-- GALLERY IMAGES: replace these files in the images/ folder with real photos -->
+        <div class="gallery__item"><img src="images/milktea.jpg" alt="Milk tea drinks lined up"></div>
+        <div class="gallery__item"><img src="images/silog.jpg" alt="Silog meal with rice and egg"></div>
+        <div class="gallery__item"><img src="images/streetfood.jpg" alt="Grilled street food skewers"></div>
+        <div class="gallery__item"><img src="images/fries.jpg" alt="Loaded fries in a cup"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+       ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--center">Contact</p>
+      <h2 class="section-title section-title--center">Come by or reach out</h2>
+
+      <div class="contact__grid">
+        <div class="contact__card">
+          <div class="contact__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Address</h3>
+          <!-- EDIT: business address -->
+          <p id="contactAddress">Purok Sunflower, Consolacion, Cebu, Philippines</p>
+        </div>
+
+        <div class="contact__card">
+          <div class="contact__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 5h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 14l5 2v4c0 1-1 2-2 2C10.5 22 2 13.5 2 7c0-1 1-2 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Phone</h3>
+          <!-- EDIT: phone number (also update PHONE_NUMBER in script.js) -->
+          <p><a href="tel:+639000000000" id="contactPhone">+63 900 000 0000</a></p>
+        </div>
+
+        <div class="contact__card">
+          <div class="contact__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Email</h3>
+          <!-- EDIT: email address -->
+          <p><a href="mailto:hello@mbstreetfoodcorner.com" id="contactEmail">hello@mbstreetfoodcorner.com</a></p>
+        </div>
+
+        <div class="contact__card">
+          <div class="contact__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Opening Hours</h3>
+          <!-- EDIT: opening hours -->
+          <p id="contactHours">Mon &ndash; Sun: 10:00 AM &ndash; 10:00 PM</p>
+        </div>
+      </div>
+
+      <div class="contact__social">
+        <!-- Social links are set from BUSINESS_FACEBOOK / BUSINESS_MESSENGER in script.js -->
+        <a href="#" id="facebookLink" class="social-btn" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z" fill="currentColor"/></svg>
+          Facebook
+        </a>
+        <a href="#" id="messengerLink" class="social-btn" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.9 1.4 5.5 3.6 7.2V22l3.3-1.8c.9.2 1.8.4 2.8.4 5.5 0 10-4.2 10-9.4S17.5 2 12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m6.8 13.6 3.1-3.3 2.5 2 3.6-3.3-3.1 3.3-2.5-2-3.6 3.3Z" fill="currentColor"/></svg>
+          Messenger
+        </a>
+      </div>
+
+      <div class="contact__map">
+        <!-- Simple illustrative map placeholder; replace with an embedded map iframe if you'd like -->
+        <div class="contact__map-placeholder">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Purok Sunflower, Consolacion, Cebu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="section-inner footer__inner">
+    <div class="footer__brand">
+      <img src="images/logo.png" alt="MB Street Food Corner logo" class="footer__logo">
+      <div>
+        <p class="footer__title">MB Street Food Corner</p>
+        <p class="footer__tagline">Eat &bull; Chill &bull; Repeat</p>
+      </div>
+    </div>
+
+    <nav class="footer__links" aria-label="Footer navigation">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <p class="footer__copy">&copy; <span id="footerYear"></span> MB Street Food Corner. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     PRODUCT MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="productModalOverlay" hidden>
+  <div class="modal product-modal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <button class="modal__close" id="productModalClose" aria-label="Close product details">&times;</button>
+    <div class="product-modal__grid">
+      <img id="productModalImage" src="" alt="" class="product-modal__image">
+      <div class="product-modal__info">
+        <h3 id="productModalTitle"></h3>
+        <p id="productModalDesc" class="product-modal__desc"></p>
+        <p class="product-modal__price"><span id="productModalPrice"></span></p>
+
+        <div id="productModalAddons" class="product-modal__addons"></div>
+
+        <div class="qty-control">
+          <button type="button" id="productModalMinus" aria-label="Decrease quantity">&minus;</button>
+          <input type="number" id="productModalQty" value="1" min="1" max="50" aria-label="Quantity">
+          <button type="button" id="productModalPlus" aria-label="Increase quantity">+</button>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="productModalAddBtn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CART DRAWER
+     ============================================================ -->
+<div class="drawer-overlay" id="cartOverlay" hidden></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" hidden>
+  <div class="cart-drawer__header">
+    <h3 id="cartDrawerTitle">Your Cart</h3>
+    <button class="modal__close" id="cartDrawerClose" aria-label="Close cart">&times;</button>
+  </div>
+
+  <div class="cart-drawer__body" id="cartItems">
+    <!-- Cart items rendered by script.js -->
+  </div>
+
+  <p class="cart-drawer__empty" id="cartEmptyMsg" hidden>Your cart is empty. Add something tasty!</p>
+
+  <div class="cart-drawer__footer">
+    <div class="cart-drawer__row">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">&#8369;0.00</span>
+    </div>
+    <div class="cart-drawer__actions">
+      <button class="btn btn--ghost" id="clearCartBtn">Clear Cart</button>
+      <button class="btn btn--primary" id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ============================================================
+     CHECKOUT MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="checkoutOverlay" hidden>
+  <div class="modal checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="modal__close" id="checkoutClose" aria-label="Close checkout">&times;</button>
+
+    <!-- STEP 1: DETAILS + PAYMENT -->
+    <div class="checkout-step" id="checkoutStepForm">
+      <h3 id="checkoutTitle">Checkout</h3>
+
+      <form id="checkoutForm" novalidate>
+        <div class="form-row">
+          <label for="custName">Full Name</label>
+          <input type="text" id="custName" name="custName" required autocomplete="name">
+          <span class="form-error" id="custNameError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="custPhone">Mobile Number</label>
+          <input type="tel" id="custPhone" name="custPhone" placeholder="09XXXXXXXXX" required autocomplete="tel">
+          <span class="form-error" id="custPhoneError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="orderType">Order Type</label>
+          <select id="orderType" name="orderType">
+            <option value="pickup">Pickup</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </div>
+
+        <div class="form-row" id="addressRow">
+          <label for="custAddress">Delivery Address</label>
+          <input type="text" id="custAddress" name="custAddress" autocomplete="street-address">
+          <span class="form-error" id="custAddressError"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="custNotes">Special Instructions (optional)</label>
+          <textarea id="custNotes" name="custNotes" rows="2" placeholder="e.g. less spicy, no ice, extra sauce"></textarea>
+        </div>
+
+        <div class="form-row">
+          <span class="form-row__label">Payment Method</span>
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="gcash" checked>
+              <span>GCash</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="maya">
+              <span>Maya</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="cash">
+              <span>Cash on Pickup / Delivery</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- GCASH PAYMENT PANEL -->
+        <div class="payment-panel" id="gcashPanel">
+          <div class="payment-panel__grid">
+            <!-- REPLACE THIS IMAGE WITH YOUR REAL GCASH QR CODE -->
+            <img src="images/barak.png" alt="GCash QR code" class="payment-panel__qr">
+            <div>
+              <p class="payment-panel__amount">Amount to pay: <strong id="gcashAmount">&#8369;0.00</strong></p>
+              <ol class="payment-panel__steps">
+                <li>Open your GCash app.</li>
+                <li>Scan the QR code shown here.</li>
+                <li>Pay the exact order total.</li>
+                <li>Enter your GCash reference number below.</li>
+                <li>Upload a payment screenshot if required.</li>
+                <li>Submit your order.</li>
+              </ol>
+              <div class="form-row">
+                <label for="gcashRef">GCash Reference Number</label>
+                <input type="text" id="gcashRef" name="gcashRef" placeholder="e.g. 1234567890123">
+                <span class="form-error" id="gcashRefError"></span>
+              </div>
+              <div class="form-row">
+                <label for="gcashProof">Payment Screenshot (optional)</label>
+                <input type="file" id="gcashProof" name="gcashProof" accept="image/*">
+                <span class="form-hint" id="gcashProofName"></span>
+              </div>
+              <p class="payment-panel__note">This site does not automatically verify GCash payments &mdash; we will confirm your reference number manually.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAYA PAYMENT PANEL -->
+        <div class="payment-panel" id="mayaPanel" hidden>
+          <div class="payment-panel__grid">
+            <!-- REPLACE THIS IMAGE WITH YOUR REAL MAYA QR CODE -->
+            <img src="images/barak.png" alt="Maya QR code" class="payment-panel__qr">
+            <div>
+              <p class="payment-panel__amount">Amount to pay: <strong id="mayaAmount">&#8369;0.00</strong></p>
+              <ol class="payment-panel__steps">
+                <li>Open your Maya app.</li>
+                <li>Scan the QR code shown here.</li>
+                <li>Pay the exact order total.</li>
+                <li>Enter your Maya reference number below.</li>
+                <li>Upload a payment screenshot if required.</li>
+                <li>Submit your order.</li>
+              </ol>
+              <div class="form-row">
+                <label for="mayaRef">Maya Reference Number</label>
+                <input type="text" id="mayaRef" name="mayaRef" placeholder="e.g. 1234567890123">
+                <span class="form-error" id="mayaRefError"></span>
+              </div>
+              <div class="form-row">
+                <label for="mayaProof">Payment Screenshot (optional)</label>
+                <input type="file" id="mayaProof" name="mayaProof" accept="image/*">
+                <span class="form-hint" id="mayaProofName"></span>
+              </div>
+              <p class="payment-panel__note">This site does not automatically verify Maya payments &mdash; we will confirm your reference number manually.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASH PANEL -->
+        <div class="payment-panel" id="cashPanel" hidden>
+          <p>Pay the exact amount in cash upon pickup or when your order is delivered.</p>
+        </div>
+
+        <button type="button" class="btn btn--primary btn--full" id="reviewOrderBtn">Pay Now</button>
+      </form>
+    </div>
+
+    <!-- STEP 2: PAYMENT -->
+    <div class="checkout-step" id="checkoutStepPayment" hidden>
+      <h3>Complete Payment</h3>
+      <p class="payment-step__intro">Scan the QR code, complete your payment, then enter the reference number and confirm.</p>
+      <div class="payment-step__card">
+        <img id="paymentStepQr" src="images/barak.png" alt="Payment QR code" class="payment-panel__qr">
+        <p class="payment-panel__amount">Amount to pay: <strong id="paymentStepAmount">&#8369;0.00</strong></p>
+      </div>
+      <div class="form-row">
+        <label for="paymentStepReference">Payment Reference Number</label>
+        <input type="text" id="paymentStepReference" placeholder="Enter your GCash or Maya reference number">
+        <span class="form-error" id="paymentStepReferenceError"></span>
+      </div>
+      <div class="checkout-step__actions">
+        <button class="btn btn--outline" id="backToCheckoutBtn" type="button">Back</button>
+        <button class="btn btn--primary" id="paidOrderBtn" type="button">Paid - Place Order</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: ORDER REVIEW -->
+    <div class="checkout-step" id="checkoutStepReview" hidden>
+      <h3>Review Your Order</h3>
+
+      <div class="review-block">
+        <h4>Customer Information</h4>
+        <div id="reviewCustomer"></div>
+      </div>
+      <div class="review-block">
+        <h4>Order Details</h4>
+        <div id="reviewItems"></div>
+      </div>
+      <div class="review-block">
+        <h4>Payment Method</h4>
+        <div id="reviewPayment"></div>
+      </div>
+      <div class="review-block review-total">
+        <span>Total</span>
+        <span id="reviewTotal">&#8369;0.00</span>
+      </div>
+
+      <div class="checkout-step__actions">
+        <button class="btn btn--outline" id="editOrderBtn">Edit Order</button>
+        <button class="btn btn--primary" id="confirmOrderBtn">Confirm Order</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     ORDER CONFIRMATION MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="confirmationOverlay" hidden>
+  <div class="modal confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle">
+    <button type="button" class="modal__close" id="confirmationClose" aria-label="Close order confirmation">&times;</button>
+    <div class="confirmation-modal__print" id="printableOrder">
+      <div class="confirmation-modal__header">
+        <img src="images/logo.png" alt="MB Street Food Corner logo" class="confirmation-modal__logo">
+        <h3 id="confirmationTitle">MB STREET FOOD CORNER</h3>
+        <p class="confirmation-modal__ordernum" id="confirmOrderNumber">Order #MB-000000</p>
+        <p class="confirmation-modal__status">Order Status: <strong>Order Received</strong></p>
+      </div>
+
+      <div class="confirmation-modal__section" id="confirmCustomer"></div>
+      <div class="confirmation-modal__section" id="confirmItems"></div>
+      <div class="confirmation-modal__section" id="confirmPayment"></div>
+      <div class="confirmation-modal__total">
+        <span>Total</span>
+        <span id="confirmTotal">&#8369;0.00</span>
+      </div>
+    </div>
+
+    <div class="confirmation-modal__actions">
+      <button class="btn btn--outline" id="printOrderBtn">Print Order</button>
+      <button class="btn btn--outline" id="saveOrderBtn">Download Order</button>
+      <button class="btn btn--ghost" id="continueShoppingBtn">Continue Shopping</button>
+      <button class="btn btn--primary" id="backHomeBtn">Back to Home</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TOAST NOTIFICATION CONTAINER
+     ============================================================ -->
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
